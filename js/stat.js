@@ -1,6 +1,6 @@
 'use strict';
 
-window.renderStatistics = function(ctx, names, times) {
+window.renderStatistics = function (ctx, names, times) {
   ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
   ctx.fillRect(110, 20, 420, 270);
   ctx.fillStyle = 'rgb(255, 255, 255)';
@@ -17,12 +17,12 @@ window.renderStatistics = function(ctx, names, times) {
     }
   }
 
-  for (var i = 0; i < names.length; i++) {
-    var leftPos = 150 + (40 + 50) * i;
+  for (var j = 0; j < names.length; j++) {
+    var leftPos = 150 + (40 + 50) * j;
     var topPos = 220;
-    var colHeight = times[i] / max * 100;
+    var colHeight = times[j] / max * 100;
 
-    if (names[i] === 'Вы') {
+    if (names[j] === 'Вы') {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     } else {
       ctx.fillStyle = 'hsl(237, ' + Math.round(Math.random() * 100) + '%, 50%)';

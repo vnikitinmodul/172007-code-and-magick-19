@@ -1,7 +1,7 @@
 # Учебный проект «Код и Магия» [![Build status][travis-image]][travis-url]
 
 * Студент: [Виталий Никитин](https://up.htmlacademy.ru/javascript/19/user/172007).
-* Наставник: `Неизвестно`.
+* Наставник: [Максим Прусаков](https://up.htmlacademy.ru/javascript/19/user/83559).
 
 ---
 

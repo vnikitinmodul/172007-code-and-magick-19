@@ -38,7 +38,7 @@ var SrcData = {
   ]
 };
 
-var numWizards = 4;
+var NUM_WIZARDS = 4;
 
 var showSetup = function () {
   var setup = document.querySelector('.setup');
@@ -55,7 +55,7 @@ var getRandomItem = function (array) {
 var generateWizards = function (data) {
   var wizards = [];
 
-  for (var i = 0; i < numWizards; i++) {
+  for (var i = 0; i < NUM_WIZARDS; i++) {
     var currentWizard = {
       name: getRandomItem(data.Names),
       surname: getRandomItem(data.Surnames),

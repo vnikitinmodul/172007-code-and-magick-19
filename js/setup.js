@@ -49,7 +49,7 @@ var showSetup = function () {
 };
 
 var getRandomItem = function (array) {
-  return array[Math.round(Math.random() * (array.length - 1))];
+  return array[Math.floor(Math.random() * array.length)];
 };
 
 var generateWizards = function (data) {

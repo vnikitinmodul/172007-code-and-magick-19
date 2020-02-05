@@ -80,24 +80,6 @@ var getRandomItem = function (array) {
   return array[Math.floor(Math.random() * array.length)];
 };
 
-var changeEyesColor = function () {
-  var eyesColor = getRandomItem(SrcData.EyesColors);
-  wizardEyes.style.fill = eyesColor;
-  eyesInput.value = eyesColor;
-};
-
-var changeCoatColor = function () {
-  var coatColor = getRandomItem(SrcData.CoatColors);
-  wizardCoat.style.fill = coatColor;
-  coatInput.value = coatColor;
-};
-
-var changeFireballColor = function () {
-  var fireballColor = getRandomItem(SrcData.FireballColors);
-  fireballWrap.style.backgroundColor = fireballColor;
-  fireballInput.value = fireballColor;
-};
-
 var generateWizards = function (data) {
   var wizards = [];
 
@@ -141,36 +123,50 @@ var onPopupEscPress = function (evt) {
 };
 
 var onEyesClick = function () {
-  changeEyesColor();
+  var eyesColor = getRandomItem(SrcData.EyesColors);
+  wizardEyes.style.fill = eyesColor;
+  eyesInput.value = eyesColor;
 };
 
 var onCoatClick = function () {
-  changeCoatColor();
+  var coatColor = getRandomItem(SrcData.CoatColors);
+  wizardCoat.style.fill = coatColor;
+  coatInput.value = coatColor;
 };
 
 var onFireballClick = function () {
-  changeFireballColor();
+  var fireballColor = getRandomItem(SrcData.FireballColors);
+  fireballWrap.style.backgroundColor = fireballColor;
+  fireballInput.value = fireballColor;
 };
 
-setupOpen.addEventListener('click', function () {
+var onSetupOpenClick = function () {
   openSetup();
-});
+};
 
-setupClose.addEventListener('click', function () {
-  closeSetup();
-});
-
-setupClose.addEventListener('keydown', function (evt) {
-  if (evt.key === Keys.ENTER) {
-    closeSetup();
-  }
-});
-
-setupOpenIcon.addEventListener('keydown', function (evt) {
+var onSetupOpenKeydown = function (evt) {
   if (evt.key === Keys.ENTER) {
     openSetup();
   }
-});
+};
+
+var onSetupCloseClick = function () {
+  closeSetup();
+};
+
+var onSetupCloseKeydown = function (evt) {
+  if (evt.key === Keys.ENTER) {
+    closeSetup();
+  }
+};
+
+setupOpen.addEventListener('click', onSetupOpenClick);
+
+setupOpenIcon.addEventListener('keydown', onSetupOpenKeydown);
+
+setupClose.addEventListener('click', onSetupCloseClick);
+
+setupClose.addEventListener('keydown', onSetupCloseKeydown);
 
 wizardEyes.addEventListener('click', onEyesClick);
 

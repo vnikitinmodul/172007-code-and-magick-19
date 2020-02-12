@@ -16,6 +16,8 @@
   var closeSetup = function () {
     setup.classList.add('hidden');
     setupList.classList.add('hidden');
+    setup.style.left = '';
+    setup.style.top = '';
     document.removeEventListener('keydown', onPopupEscPress);
   };
 

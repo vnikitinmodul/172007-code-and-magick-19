@@ -49,6 +49,7 @@
       };
       upload.addEventListener('click', onClickPreventDefault);
     }
+    isMoved = false;
   };
 
   upload.addEventListener('mousedown', onUploadMousedown);

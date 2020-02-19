@@ -6,6 +6,10 @@
       ESC: 'Escape',
       ENTER: 'Enter'
     },
+    ErrorParam: {
+      TIMEOUT: 5000,
+      CLASS: 'error'
+    },
     getRandomItem: function (array) {
       return array[Math.floor(Math.random() * array.length)];
     },
@@ -19,6 +23,16 @@
       }
 
       return max;
+    },
+    showError: function (text) {
+      var errorBlock = document.createElement('div');
+
+      errorBlock.classList.add(this.ErrorParam.CLASS);
+      errorBlock.textContent = text;
+      document.querySelector('body').appendChild(errorBlock);
+      setTimeout(function () {
+        errorBlock.remove();
+      }, this.ErrorParam.TIMEOUT);
     }
   };
 }());

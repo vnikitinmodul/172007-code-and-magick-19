@@ -54,4 +54,8 @@
   setupClose.addEventListener('click', onSetupCloseClick);
 
   setupClose.addEventListener('keydown', onSetupCloseKeydown);
+
+  window.setupModal = {
+    closeSetup: closeSetup
+  };
 }());

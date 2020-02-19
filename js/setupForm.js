@@ -58,23 +58,6 @@
   var fireballInput = document.querySelector('input[name="fireball-color"]');
   var setupWizardForm = document.querySelector('.setup-wizard-form');
 
-
-  var generateWizards = function (data) {
-    var wizards = [];
-
-    for (var i = 0; i < NUM_WIZARDS; i++) {
-      var currentWizard = {
-        name: window.util.getRandomItem(data.Names) + ' ' + window.util.getRandomItem(data.Surnames),
-        colorCoat: window.util.getRandomItem(data.CoatColors),
-        colorEyes: window.util.getRandomItem(data.EyesColors)
-      };
-
-      wizards.push(currentWizard);
-    }
-
-    return wizards;
-  };
-
   var cloneWizard = function (data, template, count) {
     var clone = template.cloneNode(true);
 
@@ -133,7 +116,6 @@
 
   setupWizardForm.addEventListener('submit', onSetupWizardFormSubmit);
 
-  // putWizards(generateWizards(SrcData));
   window.backend.load(putWizards, onStatusError);
 
 }());
